@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cab List
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>   
+        <!-- Repeat the ion-item for as many items that we have inside of our shopping List-->
+        <ion-item *ngFor = "let item of listItemRef$ | async" (click)= "selectedCab(item)">
+          <!-- <h2>Item Name: {{item.itemName}}</h2>
+          <h3>Amount: {{item.itemNumber}}</h3> -->
+          <h2><strong>Model: {{item.make}}</strong></h2>
+          <h3><div><strong>Color:</strong> {{item.color}}</div>
+            <div><strong>Reg.Num:</strong> {{item.reg_number}}</div>
+            <strong>Contact:</strong> {{item.number}}</h3>          
+        </ion-item>
+    </ion-list>
+</ion-content>
